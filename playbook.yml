@@ -2,7 +2,7 @@
 - hosts: webservers
   become: yes
   vars: 
-    username: root
+    username: aniuser
     doc_root: /var/www/html
   tasks:
   - name: Install nginx
