@@ -1,0 +1,22 @@
+---
+- hosts: webservers
+  become: yes
+  vars: 
+    username: root
+    doc_root: /var/www/html
+  tasks:
+  - name: Install nginx
+    apt:
+      name: nginx
+      state: present
+    when: ansible_os_family == "Debian"
+  - name: Start apache2
+    service:
+      name: nginx
+      state: started 
+      enabled: yes
+    when: ansible_os_family == "Debian"
+  - name: Copy index template from templates
+    template: 
+      src: '/var/lib/jenkins/workspace/My First Descriptive Pipeline/target/addressbook.war'
+      dest: "{{ doc_root }}"
