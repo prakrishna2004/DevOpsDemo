@@ -1,9 +1,9 @@
 ---
 - hosts: webservers
   become: yes
-  bacome_user: aniuser
+  bacome_user: ansiuser
   vars: 
-    username: aniuser
+    username: ansiuser
     doc_root: /var/www/html
   tasks:
   - name: Install nginx
@@ -19,5 +19,5 @@
     when: ansible_os_family == "Debian"
   - name: Copy index template from templates
     template: 
-      src: '/var/lib/jenkins/workspace/My First Descriptive Pipeline/target/addressbook.war'
+      src: '/var/lib/jenkins/workspace/mypipeline/target/addressbook.war'
       dest: "{{ doc_root }}"
