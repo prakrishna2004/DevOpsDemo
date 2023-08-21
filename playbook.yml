@@ -1,7 +1,7 @@
 ---
 - hosts: webservers
   become: yes
-  bacome_as: aniuser
+  bacome_user: aniuser
   vars: 
     username: aniuser
     doc_root: /var/www/html
