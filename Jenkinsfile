@@ -47,7 +47,7 @@ pipeline{
 	     
           stage('Deploy'){
 	      steps{
-		 ansiblePlaybook credentialsId: 'ansible1', disableHostKeyChecking: true, installation: 'myansible', inventory: 'playbook_dev.inv', playbook: 'playbook.yml'
+		 ansiblePlaybook credentialsId: 'AnsibleAuth', disableHostKeyChecking: true, installation: 'myansible', inventory: 'playbook_dev.inv', playbook: 'playbook.yml'
 	      }
 	  }
       }
