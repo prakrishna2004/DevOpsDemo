@@ -30,7 +30,7 @@ pipeline{
                   sh 'docker build -t myimage .'
 	      }
         }
-	stage('Create container'){
+	stage('Deploy the application'){
              
               steps{
                   echo 'Create container'
