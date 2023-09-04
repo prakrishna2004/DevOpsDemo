@@ -34,7 +34,7 @@ pipeline{
              
               steps{
                   echo 'Create container'
-                  sh 'docker -d -P myimage'
+                  sh 'docker run -d -P myimage'
 	      }
         }
       }
