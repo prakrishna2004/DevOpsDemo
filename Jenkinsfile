@@ -29,6 +29,13 @@ pipeline{
                   echo 'Building docker image'
                   sh 'docker build -t myimage .'
 	      }
-          }
+        }
+	stage('Create container'){
+             
+              steps{
+                  echo 'Create container'
+                  sh 'docker -d -P myimage'
+	      }
+        }
       }
 }
